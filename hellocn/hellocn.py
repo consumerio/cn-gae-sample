@@ -20,12 +20,17 @@ class GridsList(webapp2.RequestHandler):
         username = self.request.get('username')
         api_key = self.request.get('apikey')
         url = 'https://consumernotebook.com/api/v1/grids/?username={0}&apikey={1}'.format(username, api_key)
-        f = urllib2.urlopen(url)
+        try:
+            f = urllib2.urlopen(url)
+        except urllib2.HTTPError:
+            f = None
+
         grids = []
-        grids_response = f.read()
-        if grids_response:
-            grids_json = json.loads(grids_response)
-            grids = grids_json[u'objects']
+        if f:
+            grids_response = f.read()
+            if grids_response:
+                grids_json = json.loads(grids_response)
+                grids = grids_json[u'objects']
 
         template_values = {
             'username': username,
