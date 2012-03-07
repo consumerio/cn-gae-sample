@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h1>CN Google App Engine Sample</h1>
+
+        <p>Here is a list of <strong>{{ username }}</strong>'s grids:</p>
+
+        <ul>
+        {% for grid in grids %}
+            <li><a href="TODO">{{ grid.title }}</a></li>
+        {% endfor %}
+        </ul>
+
+    </body>
+</html>

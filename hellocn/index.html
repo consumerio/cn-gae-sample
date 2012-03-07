@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <h1>CN Google App Engine Sample</h1>
+
+        <p>
+            This is an example showing how to use Consumer Notebook's Grids API.  It's open-source and runs on GAE.
+        </p>
+        <p>
+            You can download, run, and deploy this yourself: just grab the code from <a href="https://github.com/consumernotebook/cn-gae-sample/">https://github.com/consumernotebook/cn-gae-sample/</a> and follow the instructions in the README file.
+        </p>
+        <p>
+            For more info and code samples, see <a href="http://developers.consumernotebook.com">http://developers.consumernotebook.com</a>.
+        </p>
+
+        <h2>CN Comparison Grid Lookup Tool</h2>
+
+        <p>Enter a <a href="http://consumernotebook.com">consumernotebook.com</a> username to see the grids created by the specified user:</p>
+
+        <form action="/grids-list" method="post">
+          <div>Consumer Notebook username: <input type="text" name="username" /></div>
+          <div>Consumer Notebook API key: <input type="text" name="apikey" /></div>
+          <div><input type="submit" value="Show me their grids"></div>
+        </form>
+    </body>
+</html>
