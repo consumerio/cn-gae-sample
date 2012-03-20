@@ -31,3 +31,6 @@ pip-log.txt
 
 # Mac cruft
 .DS_Store
+
+# Private settings
+private.py

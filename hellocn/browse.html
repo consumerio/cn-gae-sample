@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:20px;">
+            <h1>My Consumer Notebook Data - Browse</h1>
+
+            <p>Welcome, {{ nickname }}!</p>
+
+            <p>Here is the data in your Consumer Notebook account:</p>
+
+            <h3>Your products</h3>
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>…</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{ product.title }}</td>
+                        <td>…</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h3>Your lists</h3>
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for list in lists %}
+                    <tr>
+                        <td><a href="{{ list.link }}">{{ list.title }}</a></td>
+                        <td>{{ list.description }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h3>Your grids</h3>
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for grid in grids %}
+                    <tr>
+                        <td>{{ grid.title }}</td>
+                        <td>{{ grid.description }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>
